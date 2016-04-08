@@ -1,0 +1,20 @@
+解释此处静态工厂方法是什么
+    静态工厂方法只是一个返回类的实例的静态方法。
+
+1、静态工厂方法与工厂方法不同的优势
+    1)它们有名称
+    2)不必在每次调用它们的时候都创建一个新对象
+    3)他们可以返回原返回类型的任何子类型的对象
+        1> 如EnumSet,
+             当元素少于或等于64时，返回实现类RegalarEnumSet
+             当元素多余64时，返回实现类JumboEnumSet
+        2>服务提供者框架
+            ①服务接口(Service Interface)
+                这是提供者实现的: Connection
+            ②提供者注册API(Provider Registration API)
+                这是系统用来注册实现，让客户端访问它们的: DriverManager.registerDriver
+            ③服务访问API(Service Access API)
+                这是客户端用来获取服务的实例的: DriverManager.getConnection
+            ④服务提供者接口(Service Provider Interface)
+                可选
+                这是提供者负责创建其服务实现的实例: Driver
