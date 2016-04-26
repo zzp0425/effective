@@ -16,4 +16,12 @@ public class ObjectLearn {
     public static Boolean valueOf(boolean b) {
         return b ? Boolean.TRUE : Boolean.FALSE;
     }
+
+    public static void main(String[] args) {
+        long sum = 0l;//用基本类型long,而不是Long，否则多创建2的31次方个Long实例
+        for (long i = 0; i < Integer.MAX_VALUE; i++) {
+            sum += i;
+        }
+        System.out.println(sum);
+    }
 }
